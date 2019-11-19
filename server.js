@@ -4,7 +4,6 @@ const path = require('path')
 const bodyParser = require('body-parser')
 
 
-
 // sets port and express app
 const app = express()
 const PORT = process.env.PORT || 8080;
@@ -14,8 +13,6 @@ const PORT = process.env.PORT || 8080;
 // Link to api routes
 // require(path.join(__dirname,'./app/routing/apiRoutes.js'))(app)
 require(path.join(__dirname,'./app/routing/htmlRoutes.js'))(app)
-
-
 
 
 // declare middleware
