@@ -1,12 +1,11 @@
 
 const friendsData = require('../data/friends.js');
 
-console.log(friendsData);
+
 
 
 module.exports = function(app){
 app.get('/api/friends', function(req, res) {
-    
     console.log(friendsData);
     console.log('blahhhh')
     
