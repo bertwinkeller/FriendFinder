@@ -30,7 +30,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Name (Required)</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input"
+                <input type="text" id="nameInput" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
             </div>
 
@@ -38,7 +38,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Picture Link (Required)</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input"
+                <input type="text" class="form-control" id="pictureInput" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
             </div>
 
@@ -162,12 +162,16 @@
                             <option>5 (Strongly Agree)</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
 
                 </div>
 
 
             </div>
+        </div>
+        <div id="match">
+
+
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -179,7 +183,45 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-        <script src="./js/script.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+
+
+            document.getElementById("submit").addEventListener("click", function (e) {
+                e.preventDefault()
+                let newFriend = {
+                    'name': document.getElementById('nameInput').value,
+                    'photo': document.getElementById('pictureInput').value,
+                    'scores': [
+                        parseInt(document.getElementById('q1').value),
+                        parseInt(document.getElementById('q2').value),
+                        parseInt(document.getElementById('q3').value),
+                        parseInt(document.getElementById('q4').value),
+                        parseInt(document.getElementById('q5').value),
+                        parseInt(document.getElementById('q6').value),
+                        parseInt(document.getElementById('q7').value),
+                        parseInt(document.getElementById('q8').value),
+                        parseInt(document.getElementById('q9').value),
+                        parseInt(document.getElementById('q10').value)
+
+                    ]
+                }
+                console.log(newFriend)
+                axios.post('/api/friends', newFriend)
+                    .then(({ data }) => {
+                        document.getElementById('match').innerHTML = ''
+                        let friendMatch = document.createElement('div')
+                        friendMatch.innerHTML = `
+    <h1>${data.name} is your best match!</h1>
+    <img src = "${data.photo}">
+    `
+                        document.getElementById('match').append(friendMatch)
+                    })
+                    .catch(e => console.log(e))
+            })
+        </script>
+
+
 
 </body>
 

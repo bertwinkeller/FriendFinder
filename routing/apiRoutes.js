@@ -4,18 +4,36 @@ const friendsData = require('../data/friends.js');
 
 
 
-module.exports = function(app){
-app.get('/api/friends', function(req, res) {
-    console.log(friendsData);
-    console.log('blahhhh')
-    
-});
+module.exports = function (app) {
+    app.get('/api/friends', function (req, res) {
+        res.send(friendsData);
+        res.sendStatus(200)
+
+    });
 
 
-app.post('/api/friends', function(req,res){
-// convert each users data into an array of numbers
-
-
-
-});
+    app.post('/api/friends', function (req, res) {
+        // get user info
+        let user = req.body
+        // will be the index of the best matched friend
+        let bestMatch = 0
+        // default difference for comparing 
+        let defaultDiff = 51
+        for (let i = 0; i < friend.length; i++) {
+          let totalDiff = 0
+            for (let j = 0; j < friend[i].scores.length; j++) {
+            //  calculating absolute difference from each different friend and user
+              let difference = Math.abs(friend[i].scores[j] - user.scores[j])
+              totalDiff += difference
+            }
+            if (totalDiff < defaultDiff) {
+              defaultDiff = totalDiff
+              bestMatch = i
+            }
+      }
+    //  add user to friend list
+      friend.push(user)
+    //  send out best match
+      res.json(friend[bestMatch])
+      })
 }
