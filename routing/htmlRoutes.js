@@ -1,12 +1,14 @@
-const path = require('path')
 
-module.exports = function(app){
-    app.get('/', function(req,res){
-        res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
-    })
+// Dont need html routes
+// const path = require('path')
 
-    app.get('/survey', function(req,res){
-        res.sendFile(path.join(__dirname, '..', 'public', 'survey.html'))
-    })
-};
+// module.exports = function(app){
+//     app.get('/', function(req,res){
+//         res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
+//     })
+
+//     app.get('/survey', function(req,res){
+//         res.sendFile(path.join(__dirname, '..', 'public', 'survey.html'))
+//     })
+// };
 
