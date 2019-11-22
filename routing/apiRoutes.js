@@ -15,7 +15,7 @@ module.exports = app => {
 
     app.post('/api/friends', function (req, res) {
         // get user info
-        console.log(req.body)
+     
         // will be the index of the best matched friend
         let bestMatch = 0
         // default difference for comparing 
