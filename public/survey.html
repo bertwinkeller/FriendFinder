@@ -171,7 +171,6 @@
         </div>
         <div id="match">
 
-
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -206,22 +205,21 @@
 
                     ]
                 }
-                console.log(newFriend)
+                
                 axios.post('/api/friends', newFriend)
-                    .then(({ data }) => {
+                    .then(({data}) => {
+
                         document.getElementById('match').innerHTML = ''
                         let friendMatch = document.createElement('div')
                         friendMatch.innerHTML = `
-    <h1>${data.name} is your best match!</h1>
-    <img src = "${data.photo}">
+                            <h1>${data.name} is your best match!</h1>
+                           <img src = "${data.photo}">
     `
                         document.getElementById('match').append(friendMatch)
                     })
                     .catch(e => console.log(e))
             })
         </script>
-
-
 
 </body>
 

@@ -2,9 +2,10 @@
 const friendsData = require('../data/friends.js');
 
 
+const path = require('path')
 
 
-module.exports = function (app) {
+module.exports = app => {
     app.get('/api/friends', function (req, res) {
         res.send(friendsData);
         res.sendStatus(200)
@@ -14,16 +15,16 @@ module.exports = function (app) {
 
     app.post('/api/friends', function (req, res) {
         // get user info
-        let user = req.body
+        console.log(req.body)
         // will be the index of the best matched friend
         let bestMatch = 0
         // default difference for comparing 
-        let defaultDiff = 51
-        for (let i = 0; i < friend.length; i++) {
+        let defaultDiff = 41
+        for (let i = 0; i < friendsData.length; i++) {
           let totalDiff = 0
-            for (let j = 0; j < friend[i].scores.length; j++) {
+            for (let j = 0; j < friendsData[i].scores.length; j++) {
             //  calculating absolute difference from each different friend and user
-              let difference = Math.abs(friend[i].scores[j] - user.scores[j])
+              let difference = Math.abs(friendsData[i].scores[j] - req.body.scores[j])
               totalDiff += difference
             }
             if (totalDiff < defaultDiff) {
@@ -32,8 +33,8 @@ module.exports = function (app) {
             }
       }
     //  add user to friend list
-      friend.push(user)
+      friendsData.push(req.body)
     //  send out best match
-      res.json(friend[bestMatch])
+      res.json(friendsData[bestMatch])
       })
 }
