@@ -87,7 +87,7 @@ const userData = [
 
     {
         "name": "Butters",
-        "photo": "https://avatars0.githubusercontent.com/u/1561825?v=3&s=460",
+        "photo": "",
         "scores": [
             3,
             1,

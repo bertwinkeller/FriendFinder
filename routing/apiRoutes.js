@@ -33,7 +33,7 @@ module.exports = app => {
             }
       }
     //  add user to friend list
-      friendsData.push(req.body)
+      // friendsData.push(req.body)
     //  send out best match
       res.json(friendsData[bestMatch])
       })
