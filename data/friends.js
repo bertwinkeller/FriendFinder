@@ -2,7 +2,7 @@
 const userData = [
     {
         "name": "Kyle",
-        "photo": "https://avatars0.githubusercontent.com/u/1561825?v=3&s=460",
+        "photo": "https://vignette.wikia.nocookie.net/southpark/images/9/95/Kyle-broflovski.png/revision/latest?cb=20190411033301",
         "scores": [
             5,
             1,
@@ -19,7 +19,7 @@ const userData = [
 
     {
         "name": "Cartman",
-        "photo": "https://avatars0.githubusercontent.com/u/1561825?v=3&s=460",
+        "photo": "https://statici.behindthevoiceactors.com/behindthevoiceactors/_img/chars/eric-cartman-south-park-47.1.jpg",
         "scores": [
             3,
             3,
@@ -36,7 +36,7 @@ const userData = [
 
     {
         "name": "Stan",
-        "photo": "https://avatars0.githubusercontent.com/u/1561825?v=3&s=460",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR48p2tRTn1y6405MrjM5hwbpkw8NCf77LHWxksx_kCsDiAu1Uz&s",
         "scores": [
             5,
             1,
@@ -53,7 +53,7 @@ const userData = [
 
     {
         "name": "Kenny",
-        "photo": "https://avatars0.githubusercontent.com/u/1561825?v=3&s=460",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxgx2ckZxlACQLsDy45KQ5erU3ioMJqd1PgYsa6e1PdQXD3mBM&s",
         "scores": [
             2,
             1,
@@ -70,7 +70,7 @@ const userData = [
 
     {
         "name": "Randy",
-        "photo": "https://avatars0.githubusercontent.com/u/1561825?v=3&s=460",
+        "photo": "http://southparkstudios.mtvnimages.com/shared/characters/adults/randy-marsh.png",
         "scores": [
             5,
             2,
@@ -87,7 +87,7 @@ const userData = [
 
     {
         "name": "Butters",
-        "photo": "",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkxfXw-wfI-oKnxc1_ooPvXKGDW3yQGzNTIJ-pkC5Hrh8pdJPE&s",
         "scores": [
             3,
             1,
